@@ -29,7 +29,8 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 for msg in st.session_state.messages:
-    st.chat_message(msg["role"]).markdown(msg["content"])
+    st.chat_message(msg["role"]).markdown(
+        msg["content"], unsafe_allow_html=True)
 
 if prompt := st.chat_input("Digite sua mensagem..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
