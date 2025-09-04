@@ -1,13 +1,9 @@
 import streamlit as st
 import requests
-from dotenv import load_dotenv
 import os
 
+BACKEND_URL = "https://orac-bot.onrender.com/orac-ia"
 
-BACKEND_URL = "http://localhost:5000/orac-ia"
-
-
-load_dotenv()
 SENHA_ORAC_IA = os.getenv('SENHA_ORAC_IA')
 
 st.set_page_config(page_title="Orac IA",
