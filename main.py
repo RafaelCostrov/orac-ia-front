@@ -33,7 +33,7 @@ for msg in st.session_state.messages:
 
 if prompt := st.chat_input("Digite sua mensagem..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
-    st.chat_message("user").markdown(prompt)
+    st.chat_message("user").markdown(prompt, unsafe_allow_html=True)
 
     data = {
         "nome_usuario": nome_usuario,
